@@ -12,6 +12,14 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 const Sidebar = () => {
     return (
         <div className="sidebar">
+            <SidebarRow
+                src="https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg"
+                title="Rokas Rudzianskas"
+            />
+            <SidebarRow
+                Icon={LocalHospitalIcon}
+                title="COVID-21 Information Center"
+            />
             {/* passing the props to the sidebar row*/}
             <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
             <SidebarRow Icon={PeopleIcon} title="Friends" />
