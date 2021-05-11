@@ -1,6 +1,11 @@
 import React from 'react';
 import "./styles/Post.css";
-import {Avatar} from "@material-ui/core";
+import {Avatar, IconButton} from "@material-ui/core";
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+import NearMeIcon from '@material-ui/icons/NearMe';
+import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const Post = ({ profilePic, image, username, timestamp, message}) => {
     return (
@@ -21,6 +26,29 @@ const Post = ({ profilePic, image, username, timestamp, message}) => {
 
             <div className="post__image">
                 <img src={image} alt=""/>
+            </div>
+
+            <div className="post__options">
+                <div className="post__option">
+                    <IconButton><ThumbUpIcon /></IconButton>
+                    <p>Like</p>
+                </div>
+
+                <div className='post__option'>
+                    <IconButton><ChatBubbleOutlineIcon /></IconButton>
+                    <p>Comment</p>
+                </div>
+
+                <div className='post__option'>
+                    <IconButton><NearMeIcon /></IconButton>
+                    <p>Share</p>
+                </div>
+
+                <div className='post__option'>
+                    <IconButton><AccountCircleIcon /></IconButton>
+                    <IconButton><ExpandMoreOutlinedIcon /></IconButton>
+                </div>
+
             </div>
         </div>
     );
