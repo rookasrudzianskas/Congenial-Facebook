@@ -52,6 +52,26 @@ const Header = () => {
             </div>
 
             <div className="header__right">
+                <div className="header__info">
+                    <Avatar />
+                    <h4>Rookas </h4>
+                </div>
+                {/* Icon buttons with icons */}
+                <IconButton>
+                    <AddIcon />
+                </IconButton>
+
+                <IconButton>
+                    <ForumIcon />
+                </IconButton>
+
+                <IconButton>
+                    <NotificationsActiveIcon />
+                </IconButton>
+
+                <IconButton>
+                    <ExpandMoreIcon />
+                </IconButton>
 
             </div>
         </div>
