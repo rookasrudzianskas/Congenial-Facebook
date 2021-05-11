@@ -24,12 +24,12 @@ const Header = () => {
 
                 <div className="header__input">
                     <SearchIcon />
-                    <input type="text"/>
+                    <input type="text" placeholder="Search Facebook"/>
                 </div>
             </div>
 
             <div className="header__center">
-                <div className="header__option">
+                <div className="header__option header__option--active">
                     <HomeIcon fontSize="large" />
                 </div>
 
