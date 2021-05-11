@@ -12,6 +12,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 const Sidebar = () => {
     return (
         <div className="sidebar">
+            {/* passing the props to the sidebar row*/}
             <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
             <SidebarRow Icon={PeopleIcon} title="Friends" />
             <SidebarRow Icon={ChatIcon} title="Messenger" />
