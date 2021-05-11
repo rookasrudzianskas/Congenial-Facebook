@@ -1,3 +1,9 @@
+.header {
+    display: flex;
+    padding: 15px 20px;
+    justify-content: space-between;
+}
+
 .header__left > img {
     height: 40px;
     object-fit: contain;
