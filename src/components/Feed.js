@@ -6,7 +6,8 @@ const Feed = () => {
     return (
         <div className="feed">
             <StoryReel />
-        {/*    story        */}
+
+            <MessageSender />
         {/*    Message Sender   */}
 
         </div>
