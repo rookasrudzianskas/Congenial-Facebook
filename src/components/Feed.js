@@ -10,7 +10,7 @@ const Feed = () => {
 
             <MessageSender />
         {/*    Message Sender   */}
-
+            <Post />
         </div>
     );
 };

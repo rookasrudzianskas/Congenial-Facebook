@@ -12,7 +12,10 @@ const MessageSender = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("Done");
+    //   some clever db stuff
+
+        setInput("");
+        setImageUrl("");
     };
 
     return (
