@@ -38,15 +38,15 @@ const Header = () => {
                 </div>
 
                 <div className="header__option">
-                    <SubscriptionsOutlinedIcon fontsize="large" />
+                    <SubscriptionsOutlinedIcon fontSize="large" />
                 </div>
 
                 <div className="header__option">
-                    <StorefrontOutlinedIcon fontsize="large" />
+                    <StorefrontOutlinedIcon fontSize="large" />
                 </div>
 
                 <div className="header__option">
-                    <SupervisedUserCircleIcon fontsize="large" />
+                    <SupervisedUserCircleIcon fontSize="large" />
                 </div>
 
             </div>
