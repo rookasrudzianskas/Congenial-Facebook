@@ -5,19 +5,27 @@ import Feed from "./components/Feed";
 import Widgets from "./components/Widgets";
 
 function App() {
+    const user = true;
+
   return (
     <div className="app">
-        <Header />
-    {/*    Header component     */}
+        {!user ? <h1>Login</h1> : (
+            <>
+                <Header />
+            {/*    Header component     */}
 
-        <div className="app__body">
-            <Sidebar />
+                <div className="app__body">
+                <Sidebar />
             {/*    Sidebar      */}
-            <Feed />
+                <Feed />
             {/*    Feed     */}
-            <Widgets />
+                <Widgets />
             {/*        Widgets*/}
-        </div>
+
+                </div>
+            </>
+        )}
+
 
 
     </div>
