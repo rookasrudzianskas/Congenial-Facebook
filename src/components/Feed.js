@@ -1,60 +1,38 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./styles/Feed.css";
 import StoryReel from "./StoryReel";
 import MessageSender from "./MessageSender";
 import Post from "./Post";
+import db from "../firebase";
+
 
 const Feed = () => {
+    // to store the posts from the firebase
+    const [posts, setPosts] = useState([]);
+    console.log(posts)
+
+    useEffect(() => {
+    //    running code once
+        db.collection("posts").onSnapshot(snapshot => {
+            // we setPOsts with going per all id's and setting the object, to the object array
+            setPosts(snapshot.docs.map(doc => ({
+                // this is the id auto generated from the firebase
+                id: doc.id,
+                // we return all the data, which is the data in the id, name, image and so on
+                data: doc.data()
+            })));
+        })
+    }, []);
+
     return (
         <div className="feed">
             <StoryReel />
 
             <MessageSender />
         {/*    Message Sender   */}
-            <Post
-                key=""
-                profilePic="https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg"
-                message="Something cool is coming up 🚀"
-                timestamp=""
-                username="Rookas Rudzianskas"
-                image="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752"
-            />
-
-            <Post
-                key=""
-                profilePic="https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg"
-                message="Something cool is coming up 🚀"
-                timestamp=""
-                username="Rookas Rudzianskas"
-                image="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752"
-            />
-
-            <Post
-                key=""
-                profilePic="https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg"
-                message="Something cool is coming up 🚀"
-                timestamp=""
-                username="Rookas Rudzianskas"
-                image="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752"
-            />
-
-            <Post
-                key=""
-                profilePic="https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg"
-                message="Something cool is coming up 🚀"
-                timestamp=""
-                username="Rookas Rudzianskas"
-                image="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752"
-            />
-
-            <Post
-                key=""
-                profilePic="https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg"
-                message="Something cool is coming up 🚀"
-                timestamp=""
-                username="Rookas Rudzianskas"
-                image="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752"
-            />
+            {posts.map(post => (
+                <Post key={post.id} profilePic={post.profilePic} message={post.message} timestamp={post.timestamp} username={post.username} image={post.image}/>
+            ))}
 
         </div>
     );
