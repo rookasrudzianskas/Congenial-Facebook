@@ -13,7 +13,7 @@ const Feed = () => {
 
     useEffect(() => {
     //    running code once
-        db.collection("posts").onSnapshot(snapshot => {
+        db.collection("posts").orderBy('timestamp', 'desc').onSnapshot(snapshot => {
             // we setPOsts with going per all id's and setting the object, to the object array
             setPosts(snapshot.docs.map(doc => ({
                 // this is the id auto generated from the firebase
