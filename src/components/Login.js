@@ -14,7 +14,9 @@ const Login = () => {
     //    sign in with popup and provider from firebase config
     auth.signInWithPopup(provider).then(result => {
         dispatch({
+            // dispatching the user to the data layer, with action type
             type: actionTypes.SET_USER,
+            // and here the user object, from the result.user to access it
             user: result.user,
         })
     }).catch((error) => alert(error.message));

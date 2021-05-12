@@ -8,13 +8,17 @@ import ChatIcon from "@material-ui/icons/Chat";
 import StorefrontIcon from "@material-ui/icons/Storefront";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import {useStateValue} from "../StateProvider";
 
 const Sidebar = () => {
+
+    const [{user}, dispatch] = useStateValue();
+
     return (
         <div className="sidebar">
             <SidebarRow
-                src="https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg"
-                title="Rokas Rudzianskas"
+                src={user.photoURL}
+                title={user.displayName}
             />
             <SidebarRow
                 Icon={LocalHospitalIcon}
