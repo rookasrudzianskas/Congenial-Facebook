@@ -7,6 +7,7 @@ const Login = () => {
 
     const signIn = () => {
     //    clicked
+    //    sign in with popup and provider from firebase config
     auth.signInWithPopup(provider).then(result => {
         console.log(result)
     }).catch((error) => alert(error.message));
